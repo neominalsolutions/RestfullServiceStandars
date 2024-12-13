@@ -1,0 +1,6 @@
+@TGSAPI.Presentation.Layer_HostAddress = http://localhost:5169
+
+GET {{TGSAPI.Presentation.Layer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DC1AD4A8-2742-49BD-94A4-2CEA589FC02A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIStandards", "APIStandards\APIStandards.csproj", "{4A64492D-C09D-4E9F-BB81-62A964F42AC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{0ABE8871-C9D3-401C-B1ED-DD4473A11AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGSAPI.Presentation.Layer", "src\TGSAPI.Presentation.Layer\TGSAPI.Presentation.Layer.csproj", "{EB588AC2-6080-44C8-8F7D-73CEC61E01A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGSAPI.Application.Layer", "libs\TGSAPI.Application.Layer\TGSAPI.Application.Layer.csproj", "{51391BC0-EC57-486B-ADE7-4C3B65B347E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGSAPI.Domain.Layer", "libs\TGSAPI.Domain.Layer\TGSAPI.Domain.Layer.csproj", "{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGSAPI.Infrastructure.Layer", "libs\TGSAPI.Infrastructure.Layer\TGSAPI.Infrastructure.Layer.csproj", "{249DDCED-0314-45CF-977D-804B4E3DF524}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A64492D-C09D-4E9F-BB81-62A964F42AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A64492D-C09D-4E9F-BB81-62A964F42AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A64492D-C09D-4E9F-BB81-62A964F42AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A64492D-C09D-4E9F-BB81-62A964F42AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB588AC2-6080-44C8-8F7D-73CEC61E01A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB588AC2-6080-44C8-8F7D-73CEC61E01A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB588AC2-6080-44C8-8F7D-73CEC61E01A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB588AC2-6080-44C8-8F7D-73CEC61E01A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51391BC0-EC57-486B-ADE7-4C3B65B347E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51391BC0-EC57-486B-ADE7-4C3B65B347E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51391BC0-EC57-486B-ADE7-4C3B65B347E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51391BC0-EC57-486B-ADE7-4C3B65B347E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249DDCED-0314-45CF-977D-804B4E3DF524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249DDCED-0314-45CF-977D-804B4E3DF524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249DDCED-0314-45CF-977D-804B4E3DF524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249DDCED-0314-45CF-977D-804B4E3DF524}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A64492D-C09D-4E9F-BB81-62A964F42AC2} = {DC1AD4A8-2742-49BD-94A4-2CEA589FC02A}
+		{EB588AC2-6080-44C8-8F7D-73CEC61E01A7} = {DC1AD4A8-2742-49BD-94A4-2CEA589FC02A}
+		{51391BC0-EC57-486B-ADE7-4C3B65B347E0} = {0ABE8871-C9D3-401C-B1ED-DD4473A11AC0}
+		{3A1AAD3A-F058-4A1F-9B7F-22B815CA6393} = {0ABE8871-C9D3-401C-B1ED-DD4473A11AC0}
+		{249DDCED-0314-45CF-977D-804B4E3DF524} = {0ABE8871-C9D3-401C-B1ED-DD4473A11AC0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4CD65A4-B191-4B2D-9789-CCAA7855BADD}
+	EndGlobalSection
+EndGlobal
