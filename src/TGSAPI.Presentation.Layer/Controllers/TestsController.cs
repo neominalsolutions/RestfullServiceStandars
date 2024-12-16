@@ -28,8 +28,7 @@ namespace TGSAPI.Presentation.Layer.Controllers
 
       await productRepository.CreateAsync(p);
       await categoryRepository.CreateAsync(c);
-
-      //await unitOfwork.CommitAsync();
+      await unitOfwork.CommitAsync();
 
       return Ok();
     }
