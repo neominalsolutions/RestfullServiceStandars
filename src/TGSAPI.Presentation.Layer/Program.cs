@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using TGS.Infra.Core.EF.Contracts;
 using TGSAPI.Application.Layer.Contracts;
 using TGSAPI.Application.Layer.RequestHandlers;
@@ -32,6 +33,11 @@ builder.Services.AddScoped<IProductService, ProductService>();
 // Infra Layer
 builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 builder.Services.AddScoped<IUnitOfwork, AppDbUnitOfWork>();
+
+
+// Serilog Connection
+
+builder.Host.UseSerilog((ctx, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration));
 
 var app = builder.Build();
 

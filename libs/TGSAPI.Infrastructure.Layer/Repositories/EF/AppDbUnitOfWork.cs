@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -40,21 +42,21 @@ namespace TGSAPI.Infrastructure.Layer.Repositories.EF
    
             entries.ToList().ForEach((item) =>
             {
-              var jsonString = JsonSerializer.Serialize(item.Entity);
+
 
               if (item.State == Microsoft.EntityFrameworkCore.EntityState.Added)
               {
-                //var entityType = item.Entity.GetType();
-                //item.Entity.GetType().GetProperties();
-                this.logger.LogInformation($"Insert Gerçekleşti ${jsonString}");
+                // @entity @ ile yazılan template'i direkt object olarak loga atılır. 
+
+                this.logger.LogInformation("Insert Gerçekleşti  {@entity}", item.Entity);
               }
               else if (item.State == Microsoft.EntityFrameworkCore.EntityState.Modified)
               {
-                this.logger.LogInformation($"Update Gerçekleşti ${jsonString}");
+                this.logger.LogInformation("Update Gerçekleşti  {@entity}", item.Entity);
               }
               else if (item.State == Microsoft.EntityFrameworkCore.EntityState.Deleted)
               {
-                this.logger.LogInformation($"Delete Gerçekleşti ${jsonString}");
+                this.logger.LogInformation("Delete Gerçekleşti  {@entity}", item.Entity);
               }
 
             });
