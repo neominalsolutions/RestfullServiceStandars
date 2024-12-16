@@ -21,8 +21,13 @@ namespace TGSAPI.Application.Layer.RequestHandlers
 
     public async Task<CreateProductResponse> Handle(CreateProductRequest request, CancellationToken cancellationToken)
     {
+      // apidan veri çekme yapılabilir
+
       var entity = new Product { Name = request.Name };
       await this.productService.SaveAsync(entity);
+
+      // notification fırlat
+      // log süreçleri
 
       return await Task.FromResult(new CreateProductResponse(1));
     }

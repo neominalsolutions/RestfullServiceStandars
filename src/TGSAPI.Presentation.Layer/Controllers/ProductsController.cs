@@ -26,9 +26,9 @@ namespace TGSAPI.Presentation.Layer.Controllers
     [HttpPost("createV2")]
     public async Task<IActionResult> POST([FromBody] CreateProductRequest request)
     {
-      await this.mediator.Send(request);
+      var response = await this.mediator.Send(request);
 
-      return Created();
+      return Created($"/api/products/{response.Id}",response);
 
     }
 

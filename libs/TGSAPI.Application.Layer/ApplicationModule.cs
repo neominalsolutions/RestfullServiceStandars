@@ -13,7 +13,7 @@ namespace TGSAPI.Application.Layer
   // assembly ait depencieslerin yüklendiği modül dosyası
   public static class ApplicationModule 
   {
-    public static IServiceCollection LoadDependecies(this IServiceCollection services)
+    public static IServiceCollection RegisterApplicationDependecies(this IServiceCollection services)
     {
       return services.AddScoped<ICreateProductApplicationService, CreateProductApplicationService>();
     }

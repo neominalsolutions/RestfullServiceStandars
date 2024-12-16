@@ -29,7 +29,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 // Application Layer
 //builder.Services.AddScoped<ICreateProductApplicationService, CreateProductApplicationService>();
-builder.Services.LoadDependecies();
+builder.Services.RegisterApplicationDependecies();
 
 
 // Domain Layer
@@ -47,13 +47,17 @@ builder.Services.AddScoped<IUnitOfwork, AppDbUnitOfWork>();
 builder.Host.UseSerilog((ctx, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration));
 
 
+// Application Layer
 var applicationAssembly = Assembly.GetAssembly(typeof(ApplicationModule));
 ArgumentNullException.ThrowIfNull(applicationAssembly);
 
+// Domain Layer
+var domainAssembly = Assembly.GetAssembly(typeof(ProductService));
+ArgumentNullException.ThrowIfNull(domainAssembly);
 // Mediator
 builder.Services.AddMediatR(cfg =>
 {
-  cfg.RegisterServicesFromAssemblies(applicationAssembly);
+  cfg.RegisterServicesFromAssemblies(applicationAssembly, domainAssembly);
 });
 
 
