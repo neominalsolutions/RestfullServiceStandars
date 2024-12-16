@@ -18,11 +18,12 @@ namespace TGSAPI.Application.Layer.RequestHandlers
     {
       this.productService = productService;
     }
-    public Task HandleAsync(CreateProductDto request)
+    public async Task HandleAsync(CreateProductDto request)
     {
-      var entity = new Product { Name = request.Name };
-      Console.Out.WriteAsync("Application Layer  CreateProductApplicationService");
-      return productService.SaveAsync(entity);
+      var entity = new Product() { Name = request.Name };
+   
+
+       await productService.SaveAsync(entity);
     }
   }
 }

@@ -20,6 +20,8 @@ namespace TGSAPI.Presentation.Layer.Controllers
     [HttpPost]
     public async Task<IActionResult> POST([FromBody] CreateProductDto request)
     {
+   
+
       await this.createProductApplicationService.HandleAsync(request);
 
       return Created();

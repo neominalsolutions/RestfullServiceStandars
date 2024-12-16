@@ -1,8 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using TGS.Infra.Core.EF.Contracts;
 using TGSAPI.Application.Layer.Contracts;
 using TGSAPI.Application.Layer.RequestHandlers;
 using TGSAPI.Domain.Layer.Contracts;
 using TGSAPI.Domain.Layer.Services;
-using TGSAPI.Infrastructure.Layer.Repositories;
+using TGSAPI.Infrastructure.Layer.Repositories.EF;
+using TGSAPI.Persistence.Layer.EF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+// Persistance Layer
+builder.Services.AddDbContext<AppDbContext>(opt =>
+{
+  opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConn"));
+});
+
 // Application Layer
 builder.Services.AddScoped<ICreateProductApplicationService, CreateProductApplicationService>();
 
@@ -20,7 +30,8 @@ builder.Services.AddScoped<ICreateProductApplicationService, CreateProductApplic
 builder.Services.AddScoped<IProductService, ProductService>();
 
 // Infra Layer
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductRepository, EFProductRepository>();
+builder.Services.AddScoped<IUnitOfwork, AppDbUnitOfWork>();
 
 var app = builder.Build();
 
