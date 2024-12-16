@@ -8,23 +8,25 @@ using TGSAPI.Domain.Layer.Entities;
 
 namespace TGSAPI.Persistence.Layer.EF
 {
-  public class AppDbContext:DbContext
+  public class AppDbContext : DbContext
   {
 
     public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
 
-        public AppDbContext(DbContextOptions<AppDbContext> opt):base(opt)
-        {
-            
-        }
 
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //{
-    //  optionsBuilder.UseSqlServer("Server=localhost\\MSSQLSERVER01;Database=TGSDB;Integrated Security=True;TrustServerCertificate=True");
+    public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt)
+    {
 
-    //  base.OnConfiguring(optionsBuilder);
-    //}
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      optionsBuilder.UseSqlServer("Server=localhost\\MSSQLSERVER01;Database=TGSDB;Integrated Security=True;TrustServerCertificate=True");
+
+      base.OnConfiguring(optionsBuilder);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -32,6 +32,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 
 // Infra Layer
 builder.Services.AddScoped<IProductRepository, EFProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>(); 
 builder.Services.AddScoped<IUnitOfwork, AppDbUnitOfWork>();
 
 
